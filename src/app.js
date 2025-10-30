@@ -1,4 +1,5 @@
 import express from 'express';
+import react from 'react';
 import cors from "cors"
 import cookieParser from 'cookie-parser';
 
@@ -25,5 +26,12 @@ app.use(express.static("public"))
 //use cookies from user interfaceweb 
 app.use(cookieParser())
 
+
+//routes
+import userRouter from './routes/user.routes.js';
+import { use } from 'react';
+
+//routes declaration
+app.use("/api/v1/users",userRouter)
 
 export {app}
